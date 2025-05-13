@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using Microsoft.Win32.TaskScheduler;
 using Task = System.Threading.Tasks.Task;
+using System.Diagnostics;
+using System.Reflection;
 
 
 namespace BackupApp
@@ -20,14 +22,15 @@ namespace BackupApp
     {
         private DateTime backupTime; // Declare as a field
         private string timestamp;
+        private string destinationDirectory;
 
         public BackupAppForm1()
         {
             InitializeComponent();
             CheckAndCreateFiles();
-            backupTime = DateTime.Now;
-            timestamp = backupTime.ToString("yyyyMMdd_HHmmss");
         }
+
+        string projectName = Assembly.GetExecutingAssembly().GetName().Name + " Message";
 
         public static bool TaskExists(string taskName)
         {
@@ -86,11 +89,11 @@ namespace BackupApp
                     string status = taskStatuses[taskName] ? "enabled" : "disabled";
                     message += $"{taskName} - {status}\n";
                 }
-                MessageBox.Show(message);
+                MessageBox.Show(message, projectName);
             }
             else
             {
-                MessageBox.Show("No scheduler tasks for ETC backup exist on this system");
+                MessageBox.Show("No scheduler tasks for ETC backup exist on this system", projectName);
             }
         }
 
@@ -251,14 +254,17 @@ namespace BackupApp
 
         public void CopyFiles()
         {
+            backupTime = DateTime.Now;
+            timestamp = backupTime.ToString("yyyyMMdd_HHmmss");
+
             if (fileListBox.Items.Count == 0 && folderListBox.Items.Count == 0)
             {
-                MessageBox.Show("A file or folder must be selected for backup", "Database Backup 2.0");
+                MessageBox.Show("A file or folder must be selected for backup", projectName);
                 return;
             }
             //if (folderListBox.Items.Count == 0)
             {
-                DialogResult backUpMessage = MessageBox.Show("You are about to back up " + fileListBox.Items.Count + " file(s) and " + folderListBox.Items.Count + " folder(s). \nDo you want to continue?", "Attention", MessageBoxButtons.OKCancel);
+                DialogResult backUpMessage = MessageBox.Show("You are about to back up " + fileListBox.Items.Count + " file(s) and " + folderListBox.Items.Count + " folder(s). \nDo you want to continue?", "ATTENTION", MessageBoxButtons.OKCancel);
                 if (backUpMessage == DialogResult.OK)
 
                 {
@@ -266,12 +272,12 @@ namespace BackupApp
 
                     if (BackupPathListBox.Items.Count == 0)
                     {
-                        MessageBox.Show("Please select a destination folder first.", "Database Backup 2.0");
+                        MessageBox.Show("Please select a destination folder first.", projectName);
                         return;
                     }
 
 
-                    string destinationDirectory = BackupPathListBox.Items[0].ToString(); // Assuming only one destination
+                    destinationDirectory = BackupPathListBox.Items[0].ToString(); // Assuming only one destination
 
                     if (!Directory.Exists(destinationDirectory))
                     {
@@ -338,11 +344,11 @@ namespace BackupApp
                         }
                     }
 
-                    MessageBox.Show("Files backed up successfully", "Database Backup 2.0");
+                    MessageBox.Show("Files backed up successfully", projectName);
                 }
                 else
                 {
-                    MessageBox.Show("Please select at least one file to backup", "Database Backup 2.0");
+                    MessageBox.Show("Please select at least one file to backup", projectName);
                 }
             }
         }
@@ -394,6 +400,19 @@ namespace BackupApp
         private void BackupBtn_Click(object sender, EventArgs e)
         {
             CopyFiles();
+        }
+
+        private void OpenBackupFolderBtn_Click(object sender, EventArgs e)
+        {
+            if (BackupPathListBox.Items.Count > 0)
+            {
+                destinationDirectory = BackupPathListBox.Items[0].ToString(); // Assuming only one destination
+                Process.Start("explorer.exe", destinationDirectory);
+            }
+            else 
+            {
+                MessageBox.Show("Select a backup location first", projectName);
+            }
         }
     }
 }

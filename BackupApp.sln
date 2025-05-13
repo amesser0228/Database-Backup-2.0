@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupApp", "BackupApp.csproj", "{3DC9C12A-E390-4AB0-8C15-4FF92FFF22B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB-Backup_2.0", "DB-Backup_2.0.csproj", "{3DC9C12A-E390-4AB0-8C15-4FF92FFF22B2}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BackupApp_Setup", "..\BackupApp_Setup\BackupApp_Setup.vdproj", "{9DBEA588-29C4-4F63-AE74-0DDAD7887A57}"
 EndProject

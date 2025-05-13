@@ -15,12 +15,6 @@ namespace BackupApp
         private DateTime backupTime; // Declare as a field
         private string timestamp;
 
-        public BackupBackgroundWorker()
-        {
-            backupTime = DateTime.Now;
-            timestamp = backupTime.ToString("yyyyMMdd_HHmmss");
-        }
-
         
 
         //listBoxes can't be mutated in a non-form class. Converting text file read containers to lists for the BackupBackgroundWorker class
@@ -36,6 +30,9 @@ namespace BackupApp
 
         public void backup()
         {
+            backupTime = DateTime.Now;
+            timestamp = backupTime.ToString("yyyyMMdd_HHmmss");
+
             List<string> missingFiles = new List<string>();
             if (!File.Exists(fileBackupPath))
             {

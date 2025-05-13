@@ -46,40 +46,47 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TaskSchedProgressStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.OpenBackupFolderBtn = new System.Windows.Forms.Button();
             this.TaskSchedProgressStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Location = new System.Drawing.Point(28, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "File(s) to Backup";
             // 
             // fileListBox
             // 
             this.fileListBox.FormattingEnabled = true;
-            this.fileListBox.Location = new System.Drawing.Point(24, 49);
+            this.fileListBox.ItemHeight = 16;
+            this.fileListBox.Location = new System.Drawing.Point(32, 60);
+            this.fileListBox.Margin = new System.Windows.Forms.Padding(4);
             this.fileListBox.Name = "fileListBox";
-            this.fileListBox.Size = new System.Drawing.Size(752, 199);
+            this.fileListBox.Size = new System.Drawing.Size(1001, 244);
             this.fileListBox.TabIndex = 1;
             // 
             // folderListBox
             // 
             this.folderListBox.FormattingEnabled = true;
-            this.folderListBox.Location = new System.Drawing.Point(24, 315);
+            this.folderListBox.ItemHeight = 16;
+            this.folderListBox.Location = new System.Drawing.Point(32, 388);
+            this.folderListBox.Margin = new System.Windows.Forms.Padding(4);
             this.folderListBox.Name = "folderListBox";
-            this.folderListBox.Size = new System.Drawing.Size(752, 199);
+            this.folderListBox.Size = new System.Drawing.Size(1001, 244);
             this.folderListBox.TabIndex = 2;
             // 
             // addFileBtn
             // 
             this.addFileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addFileBtn.Location = new System.Drawing.Point(620, 20);
+            this.addFileBtn.Location = new System.Drawing.Point(827, 25);
+            this.addFileBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addFileBtn.Name = "addFileBtn";
-            this.addFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.addFileBtn.Size = new System.Drawing.Size(100, 28);
             this.addFileBtn.TabIndex = 3;
             this.addFileBtn.Text = "Add File";
             this.addFileBtn.UseVisualStyleBackColor = true;
@@ -88,9 +95,10 @@
             // removeFileBtn
             // 
             this.removeFileBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removeFileBtn.Location = new System.Drawing.Point(701, 20);
+            this.removeFileBtn.Location = new System.Drawing.Point(935, 25);
+            this.removeFileBtn.Margin = new System.Windows.Forms.Padding(4);
             this.removeFileBtn.Name = "removeFileBtn";
-            this.removeFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.removeFileBtn.Size = new System.Drawing.Size(100, 28);
             this.removeFileBtn.TabIndex = 4;
             this.removeFileBtn.Text = "Remove File";
             this.removeFileBtn.UseVisualStyleBackColor = true;
@@ -99,9 +107,10 @@
             // addFolderBtn
             // 
             this.addFolderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addFolderBtn.Location = new System.Drawing.Point(603, 286);
+            this.addFolderBtn.Location = new System.Drawing.Point(804, 352);
+            this.addFolderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addFolderBtn.Name = "addFolderBtn";
-            this.addFolderBtn.Size = new System.Drawing.Size(75, 23);
+            this.addFolderBtn.Size = new System.Drawing.Size(100, 28);
             this.addFolderBtn.TabIndex = 5;
             this.addFolderBtn.Text = "Add Folder";
             this.addFolderBtn.UseVisualStyleBackColor = true;
@@ -110,9 +119,10 @@
             // removeFolderBtn
             // 
             this.removeFolderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removeFolderBtn.Location = new System.Drawing.Point(684, 286);
+            this.removeFolderBtn.Location = new System.Drawing.Point(912, 352);
+            this.removeFolderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.removeFolderBtn.Name = "removeFolderBtn";
-            this.removeFolderBtn.Size = new System.Drawing.Size(92, 23);
+            this.removeFolderBtn.Size = new System.Drawing.Size(123, 28);
             this.removeFolderBtn.TabIndex = 6;
             this.removeFolderBtn.Text = "Remove Folder";
             this.removeFolderBtn.UseVisualStyleBackColor = true;
@@ -121,9 +131,10 @@
             // chooseBackupLocationBtn
             // 
             this.chooseBackupLocationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chooseBackupLocationBtn.Location = new System.Drawing.Point(782, 49);
+            this.chooseBackupLocationBtn.Location = new System.Drawing.Point(1043, 60);
+            this.chooseBackupLocationBtn.Margin = new System.Windows.Forms.Padding(4);
             this.chooseBackupLocationBtn.Name = "chooseBackupLocationBtn";
-            this.chooseBackupLocationBtn.Size = new System.Drawing.Size(167, 23);
+            this.chooseBackupLocationBtn.Size = new System.Drawing.Size(223, 28);
             this.chooseBackupLocationBtn.TabIndex = 7;
             this.chooseBackupLocationBtn.Text = "Choose Backup Folder";
             this.chooseBackupLocationBtn.UseVisualStyleBackColor = true;
@@ -132,17 +143,20 @@
             // BackupPathListBox
             // 
             this.BackupPathListBox.FormattingEnabled = true;
-            this.BackupPathListBox.Location = new System.Drawing.Point(785, 78);
+            this.BackupPathListBox.ItemHeight = 16;
+            this.BackupPathListBox.Location = new System.Drawing.Point(1046, 96);
+            this.BackupPathListBox.Margin = new System.Windows.Forms.Padding(4);
             this.BackupPathListBox.Name = "BackupPathListBox";
-            this.BackupPathListBox.Size = new System.Drawing.Size(164, 17);
+            this.BackupPathListBox.Size = new System.Drawing.Size(218, 20);
             this.BackupPathListBox.TabIndex = 8;
             // 
             // RemoveBackupFolderBtn
             // 
             this.RemoveBackupFolderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RemoveBackupFolderBtn.Location = new System.Drawing.Point(782, 101);
+            this.RemoveBackupFolderBtn.Location = new System.Drawing.Point(1043, 124);
+            this.RemoveBackupFolderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.RemoveBackupFolderBtn.Name = "RemoveBackupFolderBtn";
-            this.RemoveBackupFolderBtn.Size = new System.Drawing.Size(167, 23);
+            this.RemoveBackupFolderBtn.Size = new System.Drawing.Size(223, 28);
             this.RemoveBackupFolderBtn.TabIndex = 9;
             this.RemoveBackupFolderBtn.Text = "Remove Backup Folder";
             this.RemoveBackupFolderBtn.UseVisualStyleBackColor = true;
@@ -151,9 +165,10 @@
             // TaskSchedStatusBtn
             // 
             this.TaskSchedStatusBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TaskSchedStatusBtn.Location = new System.Drawing.Point(782, 130);
+            this.TaskSchedStatusBtn.Location = new System.Drawing.Point(1043, 160);
+            this.TaskSchedStatusBtn.Margin = new System.Windows.Forms.Padding(4);
             this.TaskSchedStatusBtn.Name = "TaskSchedStatusBtn";
-            this.TaskSchedStatusBtn.Size = new System.Drawing.Size(167, 23);
+            this.TaskSchedStatusBtn.Size = new System.Drawing.Size(223, 28);
             this.TaskSchedStatusBtn.TabIndex = 10;
             this.TaskSchedStatusBtn.Text = "Check ETC TaskSched Status";
             this.TaskSchedStatusBtn.UseVisualStyleBackColor = true;
@@ -164,9 +179,10 @@
             this.BackupBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackupBtn.Location = new System.Drawing.Point(782, 200);
+            this.BackupBtn.Location = new System.Drawing.Point(1043, 246);
+            this.BackupBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BackupBtn.Name = "BackupBtn";
-            this.BackupBtn.Size = new System.Drawing.Size(167, 48);
+            this.BackupBtn.Size = new System.Drawing.Size(223, 59);
             this.BackupBtn.TabIndex = 11;
             this.BackupBtn.Text = "Backup";
             this.BackupBtn.UseVisualStyleBackColor = false;
@@ -175,18 +191,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 296);
+            this.label2.Location = new System.Drawing.Point(28, 364);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.Size = new System.Drawing.Size(124, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Folder(s) to Backup";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(914, 541);
+            this.linkLabel1.Location = new System.Drawing.Point(1219, 666);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(42, 16);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "About";
@@ -195,9 +213,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(411, 541);
+            this.label3.Location = new System.Drawing.Point(548, 666);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 13);
+            this.label3.Size = new System.Drawing.Size(189, 16);
             this.label3.TabIndex = 14;
             this.label3.Text = "Developed by Andrew Messer";
             // 
@@ -205,11 +224,13 @@
             // 
             this.TaskSchedProgressStrip.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TaskSchedProgressStrip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TaskSchedProgressStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.TaskSchedProgressStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.TaskSchedProgressStrip.Location = new System.Drawing.Point(0, 0);
             this.TaskSchedProgressStrip.Name = "TaskSchedProgressStrip";
-            this.TaskSchedProgressStrip.Size = new System.Drawing.Size(971, 22);
+            this.TaskSchedProgressStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.TaskSchedProgressStrip.Size = new System.Drawing.Size(1295, 27);
             this.TaskSchedProgressStrip.TabIndex = 15;
             this.TaskSchedProgressStrip.Text = "statusStrip1";
             this.TaskSchedProgressStrip.Visible = false;
@@ -217,14 +238,27 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 21);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // OpenBackupFolderBtn
+            // 
+            this.OpenBackupFolderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OpenBackupFolderBtn.Location = new System.Drawing.Point(1043, 196);
+            this.OpenBackupFolderBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.OpenBackupFolderBtn.Name = "OpenBackupFolderBtn";
+            this.OpenBackupFolderBtn.Size = new System.Drawing.Size(223, 28);
+            this.OpenBackupFolderBtn.TabIndex = 16;
+            this.OpenBackupFolderBtn.Text = "Open Backup Folder";
+            this.OpenBackupFolderBtn.UseVisualStyleBackColor = true;
+            this.OpenBackupFolderBtn.Click += new System.EventHandler(this.OpenBackupFolderBtn_Click);
             // 
             // BackupAppForm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 563);
+            this.ClientSize = new System.Drawing.Size(1295, 693);
+            this.Controls.Add(this.OpenBackupFolderBtn);
             this.Controls.Add(this.TaskSchedProgressStrip);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.linkLabel1);
@@ -242,6 +276,7 @@
             this.Controls.Add(this.fileListBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BackupAppForm1";
             this.Text = "Database Backup 2.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BackupAppForm1_FormClosing);
@@ -272,5 +307,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.StatusStrip TaskSchedProgressStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button OpenBackupFolderBtn;
     }
 }
