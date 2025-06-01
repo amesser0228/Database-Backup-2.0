@@ -26,8 +26,8 @@
     <ProductName>Database Backup 2.0</ProductName>
     <PublisherName>Andrew Messer</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.7.0.0</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.8.5.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -112,6 +112,7 @@
     <Compile Include="BackupAppForm1.Designer.cs">
       <DependentUpon>BackupAppForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="BackupBackgroundWorker_Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">

@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using System.Runtime.CompilerServices;
-using System.Reflection;
 
 namespace BackupApp
 {
-    public class BackupBackgroundWorker
+    internal class BackupBackgroundWorker_Validation
     {
         private DateTime backupTime; // Declare as a field
         private string timestamp;
 
-        
+
 
         //listBoxes can't be mutated in a non-form class. Converting text file read containers to lists for the BackupBackgroundWorker class
         public List<string> fileList = new List<string>();
@@ -122,17 +122,17 @@ namespace BackupApp
             ///////////////////////////////////////////////////////////////
             //             COPIES DATA TO BACKUP LOCATION                // 
             ///////////////////////////////////////////////////////////////
-            
+
             if (fileList.Count != 0)
-                //if (folderList.Count == 0)
-                {
-                    //DialogResult backUpMessage = MessageBox.Show("You are about to back up " + fileList.Count + " file(s) and " + folderList.Count + " folder(s). \nDo you want to continue?", "Attention", MessageBoxButtons.OKCancel);
-                    //if (backUpMessage == DialogResult.OK)
+            //if (folderList.Count == 0)
+            {
+                //DialogResult backUpMessage = MessageBox.Show("You are about to back up " + fileList.Count + " file(s) and " + folderList.Count + " folder(s). \nDo you want to continue?", "Attention", MessageBoxButtons.OKCancel);
+                //if (backUpMessage == DialogResult.OK)
 
-                    //{
+                //{
 
 
-                        if (BackupPathList.Count == 0)
+                if (BackupPathList.Count == 0)
                 {
                     MessageBox.Show("Please select a destination folder first.", projectName);
                     return;
@@ -209,7 +209,7 @@ namespace BackupApp
                     }
                 }
 
-                //MessageBox.Show("Files backed up successfully", projectName);
+                MessageBox.Show("Files backed up successfully", projectName);
             }
             else
             {
@@ -217,7 +217,5 @@ namespace BackupApp
             }
         }
         //}
-
-
     }
 }

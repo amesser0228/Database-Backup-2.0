@@ -203,6 +203,42 @@ namespace BackupApp
 
         }
 
+        private void addFolderBtn_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            DialogResult folderResult = folderBrowser.ShowDialog();
+            if (folderResult == DialogResult.OK)
+            {
+                string folder = folderBrowser.SelectedPath;
+                //folderListBox.Items.Clear();
+                folderListBox.Items.Add(folder);
+                folderListBox.MultiColumn = true;
+            }
+
+        }
+
+        private void removeFolderBtn_Click(object sender, EventArgs e)
+        {
+
+            if (folderListBox.Items.Count > 0)
+            {
+                if (folderListBox.SelectedIndex != -1)
+                {
+
+                    folderListBox.Items.RemoveAt(folderListBox.SelectedIndex);
+                }
+                else
+                {
+                    MessageBox.Show("No file selected.", "Information");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("There are no files currently targeted for backup.", "Information");
+            }
+        }
+
         private void BackupAppForm1_FormClosing(object sender, FormClosingEventArgs e)
         {
             using (StreamWriter writer = new StreamWriter("fileBackUpList.txt"))
@@ -255,7 +291,7 @@ namespace BackupApp
         public void CopyFiles()
         {
             backupTime = DateTime.Now;
-            timestamp = backupTime.ToString("yyyyMMdd_HHmmss");
+            timestamp = backupTime.ToString("MM.dd.yyyy_HH.mm.ss");
 
             if (fileListBox.Items.Count == 0 && folderListBox.Items.Count == 0)
             {
@@ -351,25 +387,6 @@ namespace BackupApp
                     MessageBox.Show("Please select at least one file to backup", projectName);
                 }
             }
-        }
-
-        private void addFolderBtn_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            DialogResult folderResult = folderBrowser.ShowDialog();
-            if (folderResult == DialogResult.OK)
-            {
-                string folder = folderBrowser.SelectedPath;
-                //folderListBox.Items.Clear();
-                folderListBox.Items.Add(folder);
-                folderListBox.MultiColumn = true;
-            }
-
-        }
-
-        private void removeFolderBtn_Click(object sender, EventArgs e)
-        {
-            folderListBox.Items.Clear();
         }
 
         private async void TaskSchedStatusBtn_Click(object sender, EventArgs e)
